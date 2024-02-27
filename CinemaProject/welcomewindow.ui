@@ -16,40 +16,40 @@
   <widget class="QLabel" name="PicLabel">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>150</y>
-     <width>361</width>
-     <height>211</height>
+     <x>90</x>
+     <y>180</y>
+     <width>461</width>
+     <height>271</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="WelcMsg">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>80</y>
-     <width>113</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Hello admin 20,</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="LogOutButton">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>450</y>
-     <width>181</width>
-     <height>71</height>
+     <x>90</x>
+     <y>470</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>Log Out</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Welcmsg">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>130</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Hello admin </string>
    </property>
   </widget>
  </widget>
