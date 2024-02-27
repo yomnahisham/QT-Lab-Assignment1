@@ -9,6 +9,9 @@ RegisterWindow::RegisterWindow(QWidget *parent)
     , ui(new Ui::RegisterWindow)
 {
     ui->setupUi(this);
+    ui->label_usernamecheck->setVisible(false);
+    ui->label_agecheck->setVisible(false);
+    ui->label_matchingpasscheck->setVisible(false);
 }
 
 RegisterWindow::~RegisterWindow()
