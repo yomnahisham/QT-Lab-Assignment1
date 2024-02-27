@@ -30,7 +30,7 @@ WelcomeWindow::~WelcomeWindow()
 
 void WelcomeWindow::on_LogOutButton_clicked()
 {
-    this->hide();
+    hide();
     LoginWindow *login = new LoginWindow;
     login->show();
 }
