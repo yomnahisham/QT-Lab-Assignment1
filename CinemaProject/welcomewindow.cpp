@@ -9,6 +9,8 @@ WelcomeWindow::WelcomeWindow(QWidget *parent, QString username, int age)
     , ui(new Ui::WelcomeWindow)
 {
     ui->setupUi(this);
+    QString ageStr = QString::number(age);
+    ui->Welcmsg->setText("Hello" + username + " " + ageStr);
     QPixmap pix (":resources/pics/Cinema.jpg");
     int w = ui->PicLabel->width();
     int h = ui->PicLabel->height();
