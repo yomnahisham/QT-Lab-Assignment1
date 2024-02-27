@@ -1,5 +1,4 @@
-# QT-Lab-Assignment1,  🎬 CinemaProject
-# for CSCE 1102-02 #
+# QT-Lab-Assignment1,  🎬 CinemaProject (CSCE 1102-02) #
 
 The CinemaProject is a Qt application created to manage user identification and registration on a staged cinema platform. This README offers an overview of the project structure, functionality, and how to launch the program.
 
