@@ -41,7 +41,7 @@ public:
         Welcmsg->setGeometry(QRect(90, 70, 131, 16));
         WelcLabel = new QLabel(WelcomeWindow);
         WelcLabel->setObjectName("WelcLabel");
-        WelcLabel->setGeometry(QRect(280, 210, 111, 51));
+        WelcLabel->setGeometry(QRect(270, 210, 211, 51));
 
         retranslateUi(WelcomeWindow);
 

@@ -13,6 +13,8 @@ WelcomeWindow::WelcomeWindow(QWidget *parent)
     ui-> PicLabel -> setPixmap(pix.scaled(w,h, Qt::KeepAspectRatio));
     QFont font;
     font.setPointSize(20);
+    font.setFamily("times");
+    font.setWeight(QFont::Bold);
     ui->WelcLabel -> setFont(font);
     ui->WelcLabel->setStyleSheet("QLabel {color: black; }");
 }
