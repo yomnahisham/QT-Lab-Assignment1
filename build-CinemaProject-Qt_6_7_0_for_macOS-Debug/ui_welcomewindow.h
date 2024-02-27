@@ -23,6 +23,7 @@ public:
     QLabel *PicLabel;
     QPushButton *LogOutButton;
     QLabel *Welcmsg;
+    QLabel *WelcLabel;
 
     void setupUi(QDialog *WelcomeWindow)
     {
@@ -31,13 +32,16 @@ public:
         WelcomeWindow->resize(796, 620);
         PicLabel = new QLabel(WelcomeWindow);
         PicLabel->setObjectName("PicLabel");
-        PicLabel->setGeometry(QRect(90, 180, 461, 271));
+        PicLabel->setGeometry(QRect(90, 130, 601, 281));
         LogOutButton = new QPushButton(WelcomeWindow);
         LogOutButton->setObjectName("LogOutButton");
-        LogOutButton->setGeometry(QRect(90, 470, 101, 41));
+        LogOutButton->setGeometry(QRect(90, 460, 111, 51));
         Welcmsg = new QLabel(WelcomeWindow);
         Welcmsg->setObjectName("Welcmsg");
-        Welcmsg->setGeometry(QRect(90, 130, 131, 16));
+        Welcmsg->setGeometry(QRect(90, 70, 131, 16));
+        WelcLabel = new QLabel(WelcomeWindow);
+        WelcLabel->setObjectName("WelcLabel");
+        WelcLabel->setGeometry(QRect(270, 210, 211, 51));
 
         retranslateUi(WelcomeWindow);
 
@@ -50,6 +54,7 @@ public:
         PicLabel->setText(QString());
         LogOutButton->setText(QCoreApplication::translate("WelcomeWindow", "Log Out", nullptr));
         Welcmsg->setText(QCoreApplication::translate("WelcomeWindow", "Hello admin ", nullptr));
+        WelcLabel->setText(QCoreApplication::translate("WelcomeWindow", "Welcome!", nullptr));
     } // retranslateUi
 
 };

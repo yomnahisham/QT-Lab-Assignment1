@@ -1,12 +1,12 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'welcomewindow.h'
+** Meta object code from reading C++ file 'registerwindow.h'
 **
 ** Created by: The Qt Meta Object Compiler version 68 (Qt 6.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../CinemaProject/welcomewindow.h"
+#include "../CinemaProject/registerwindow.h"
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -16,7 +16,7 @@
 
 #include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'welcomewindow.h' doesn't include <QObject>."
+#error "The header file 'registerwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
 #error "This file was generated using the moc from 6.7.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -33,10 +33,10 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSWelcomeWindowENDCLASS_t {};
-constexpr auto qt_meta_stringdata_CLASSWelcomeWindowENDCLASS = QtMocHelpers::stringData(
-    "WelcomeWindow",
-    "on_LogOutButton_clicked",
+struct qt_meta_stringdata_CLASSRegisterWindowENDCLASS_t {};
+constexpr auto qt_meta_stringdata_CLASSRegisterWindowENDCLASS = QtMocHelpers::stringData(
+    "RegisterWindow",
+    "on_RegisterButton_clicked",
     ""
 );
 #else  // !QT_MOC_HAS_STRINGDATA
@@ -44,7 +44,7 @@ constexpr auto qt_meta_stringdata_CLASSWelcomeWindowENDCLASS = QtMocHelpers::str
 #endif // !QT_MOC_HAS_STRINGDATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSWelcomeWindowENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSRegisterWindowENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -66,48 +66,48 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSWelcomeWindowENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject WelcomeWindow::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject RegisterWindow::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_CLASSWelcomeWindowENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSWelcomeWindowENDCLASS,
+    qt_meta_stringdata_CLASSRegisterWindowENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSRegisterWindowENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSWelcomeWindowENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSRegisterWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<WelcomeWindow, std::true_type>,
-        // method 'on_LogOutButton_clicked'
+        QtPrivate::TypeAndForceComplete<RegisterWindow, std::true_type>,
+        // method 'on_RegisterButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
 
-void WelcomeWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void RegisterWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<WelcomeWindow *>(_o);
+        auto *_t = static_cast<RegisterWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_LogOutButton_clicked(); break;
+        case 0: _t->on_RegisterButton_clicked(); break;
         default: ;
         }
     }
     (void)_a;
 }
 
-const QMetaObject *WelcomeWindow::metaObject() const
+const QMetaObject *RegisterWindow::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *WelcomeWindow::qt_metacast(const char *_clname)
+void *RegisterWindow::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSWelcomeWindowENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSRegisterWindowENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int WelcomeWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int RegisterWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
