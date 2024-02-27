@@ -4,7 +4,7 @@
 #include <QFont>
 #include "loginwindow.h"
 
-WelcomeWindow::WelcomeWindow(QWidget *parent)
+WelcomeWindow::WelcomeWindow(QWidget *parent, QString username, int age)
     : QDialog(parent)
     , ui(new Ui::WelcomeWindow)
 {

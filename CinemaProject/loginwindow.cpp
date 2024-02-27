@@ -29,8 +29,9 @@ void LoginWindow::on_pushButton_login_clicked()
     for (int i = 0; i < usersCount; ++i) {
         if (usernames[i] == username && passwords[i] == password) {
             found = true;
+            int userAge = ages[i];
             hide();
-            WelcomeWindow *welcomeWindow = new WelcomeWindow(nullptr);
+            WelcomeWindow *welcomeWindow = new WelcomeWindow(nullptr, username, userAge);
             welcomeWindow->show();
             break;
         }
@@ -45,8 +46,8 @@ void LoginWindow::on_pushButton_login_clicked()
 
 void LoginWindow::on_pushButton_register_clicked()
 {
+    hide();
     RegisterWindow *registerWindow = new RegisterWindow(nullptr);
     registerWindow->show();
-    this->hide();
 }
 
