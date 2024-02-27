@@ -3,6 +3,7 @@
 #include <QPixmap>
 #include <QFont>
 #include "loginwindow.h"
+
 WelcomeWindow::WelcomeWindow(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::WelcomeWindow)

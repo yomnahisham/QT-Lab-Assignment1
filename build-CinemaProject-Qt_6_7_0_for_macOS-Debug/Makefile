@@ -55,6 +55,7 @@ OBJECTS_DIR   = ./
 SOURCES       = ../CinemaProject/main.cpp \
 		../CinemaProject/loginwindow.cpp \
 		../CinemaProject/registerwindow.cpp \
+		../CinemaProject/users.cpp \
 		../CinemaProject/welcomewindow.cpp qrc_Resources.cpp \
 		moc_loginwindow.cpp \
 		moc_registerwindow.cpp \
@@ -62,6 +63,7 @@ SOURCES       = ../CinemaProject/main.cpp \
 OBJECTS       = main.o \
 		loginwindow.o \
 		registerwindow.o \
+		users.o \
 		welcomewindow.o \
 		qrc_Resources.o \
 		moc_loginwindow.o \
@@ -252,9 +254,11 @@ DIST          = ../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/lex.prf \
 		../CinemaProject/CinemaProject.pro ../CinemaProject/loginwindow.h \
 		../CinemaProject/registerwindow.h \
+		../CinemaProject/users.h \
 		../CinemaProject/welcomewindow.h ../CinemaProject/main.cpp \
 		../CinemaProject/loginwindow.cpp \
 		../CinemaProject/registerwindow.cpp \
+		../CinemaProject/users.cpp \
 		../CinemaProject/welcomewindow.cpp
 QMAKE_TARGET  = CinemaProject
 DESTDIR       = 
@@ -682,8 +686,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../CinemaProject/Resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../CinemaProject/loginwindow.h ../CinemaProject/registerwindow.h ../CinemaProject/welcomewindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../CinemaProject/main.cpp ../CinemaProject/loginwindow.cpp ../CinemaProject/registerwindow.cpp ../CinemaProject/welcomewindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../CinemaProject/loginwindow.h ../CinemaProject/registerwindow.h ../CinemaProject/users.h ../CinemaProject/welcomewindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../CinemaProject/main.cpp ../CinemaProject/loginwindow.cpp ../CinemaProject/registerwindow.cpp ../CinemaProject/users.cpp ../CinemaProject/welcomewindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../CinemaProject/loginwindow.ui ../CinemaProject/registerwindow.ui ../CinemaProject/welcomewindow.ui $(DISTDIR)/
 
 
@@ -785,10 +789,7 @@ loginwindow.o: ../CinemaProject/loginwindow.cpp ../CinemaProject/loginwindow.h \
 		../CinemaProject/welcomewindow.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
-		../CinemaProject/registerwindow.h \
-		../CinemaProject/users.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QString \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qstring.h
+		../CinemaProject/registerwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o loginwindow.o ../CinemaProject/loginwindow.cpp
 
 registerwindow.o: ../CinemaProject/registerwindow.cpp ../CinemaProject/registerwindow.h \
@@ -798,6 +799,11 @@ registerwindow.o: ../CinemaProject/registerwindow.cpp ../CinemaProject/registerw
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDate \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdatetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o registerwindow.o ../CinemaProject/registerwindow.cpp
+
+users.o: ../CinemaProject/users.cpp ../CinemaProject/users.h \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qstring.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o users.o ../CinemaProject/users.cpp
 
 welcomewindow.o: ../CinemaProject/welcomewindow.cpp ../CinemaProject/welcomewindow.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
