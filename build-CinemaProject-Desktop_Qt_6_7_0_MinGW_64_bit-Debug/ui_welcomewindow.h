@@ -35,7 +35,7 @@ public:
         PicLabel->setGeometry(QRect(90, 130, 601, 281));
         LogOutButton = new QPushButton(WelcomeWindow);
         LogOutButton->setObjectName("LogOutButton");
-        LogOutButton->setGeometry(QRect(90, 470, 101, 41));
+        LogOutButton->setGeometry(QRect(90, 460, 111, 51));
         Welcmsg = new QLabel(WelcomeWindow);
         Welcmsg->setObjectName("Welcmsg");
         Welcmsg->setGeometry(QRect(90, 70, 131, 16));

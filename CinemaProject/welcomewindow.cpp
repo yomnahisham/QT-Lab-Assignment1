@@ -2,6 +2,7 @@
 #include "ui_welcomewindow.h"
 #include <QPixmap>
 #include <QFont>
+#include "loginwindow.h"
 WelcomeWindow::WelcomeWindow(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::WelcomeWindow)
@@ -23,3 +24,11 @@ WelcomeWindow::~WelcomeWindow()
 {
     delete ui;
 }
+
+void WelcomeWindow::on_LogOutButton_clicked()
+{
+    this->hide();
+    LoginWindow *login = new LoginWindow;
+    login->show();
+}
+

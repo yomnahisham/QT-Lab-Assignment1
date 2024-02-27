@@ -15,6 +15,9 @@ public:
     explicit WelcomeWindow(QWidget *parent = nullptr);
     ~WelcomeWindow();
 
+private slots:
+    void on_LogOutButton_clicked();
+
 private:
     Ui::WelcomeWindow *ui;
 };
