@@ -28,15 +28,11 @@ Build and Run: Build the project in Qt Creator and run the application to start 
 
 
 # 🔍 Testing
-Login: Test the login functionality with both correct and incorrect credentials.
-
-Registration: Test the registration process by creating a new account.
-
-Welcome Message: Ensure that the welcome message is displayed correctly upon successful login.
-
-Signout: Verify that users can successfully sign out of their accounts.
-
-Error Handling: Test error handling for various scenarios during login and registration.
+  - Login: Test the login functionality with both correct and incorrect credentials.
+  - Registration: Test the registration process by creating a new account.
+  - Welcome Message: Ensure that the welcome message is displayed correctly upon successful login.
+  - Signout: Verify that users can successfully sign out of their accounts.
+  - Error Handling: Test error handling for various scenarios during login and registration.
 
 
 # 📝 Additional Notes
