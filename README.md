@@ -21,7 +21,7 @@ The project has three primary windows:
 # 🛠️ Setup Instructions
 Clone the Repository: Clone the CinemaProject repository to your local machine.
 ```
-bash git clone <(https://github.com/yomnahisham/QT-LabAssignment1.git)>
+bash git clone <https://github.com/yomnahisham/QT-LabAssignment1.git>
 ```
 Open in Qt Creator: Open the project folder in Qt Creator.
 Build and Run: Build the project in Qt Creator and run the application to start using it.
