@@ -1,6 +1,6 @@
 #include "registerwindow.h"
 #include "ui_registerwindow.h"
-
+#include "users.h"
 
 #include <QDate>
 

@@ -27,12 +27,10 @@ class Ui_RegisterWindow
 public:
     QLabel *UserLabel;
     QLineEdit *UserLineEdit;
-    QLabel *UsernameCheck;
     QLineEdit *PassLineEdit;
     QLabel *PassLabel;
     QLabel *RetypeLabel;
     QLineEdit *RetypeLineEdit;
-    QLabel *CheckPassLabel;
     QGroupBox *BirthdayBox;
     QLabel *MonthLabel;
     QLabel *DayLabel;
@@ -40,7 +38,6 @@ public:
     QComboBox *MonthComboBox;
     QComboBox *DayComboBox;
     QComboBox *YearComboBox;
-    QLabel *CheckAgeLabel;
     QGroupBox *GenderGroupBox;
     QRadioButton *FemaleRadioButton;
     QRadioButton *MaleRadioButton;
@@ -56,6 +53,9 @@ public:
     QCheckBox *OtherCheckBox;
     QPushButton *RegisterButton;
     QLabel *CheckRegisterFields;
+    QLabel *label_usernamecheck;
+    QLabel *label_matchingpasscheck;
+    QLabel *label_agecheck;
 
     void setupUi(QDialog *RegisterWindow)
     {
@@ -68,9 +68,6 @@ public:
         UserLineEdit = new QLineEdit(RegisterWindow);
         UserLineEdit->setObjectName("UserLineEdit");
         UserLineEdit->setGeometry(QRect(180, 50, 221, 28));
-        UsernameCheck = new QLabel(RegisterWindow);
-        UsernameCheck->setObjectName("UsernameCheck");
-        UsernameCheck->setGeometry(QRect(420, 60, 231, 20));
         PassLineEdit = new QLineEdit(RegisterWindow);
         PassLineEdit->setObjectName("PassLineEdit");
         PassLineEdit->setGeometry(QRect(180, 100, 221, 28));
@@ -83,9 +80,6 @@ public:
         RetypeLineEdit = new QLineEdit(RegisterWindow);
         RetypeLineEdit->setObjectName("RetypeLineEdit");
         RetypeLineEdit->setGeometry(QRect(250, 150, 231, 28));
-        CheckPassLabel = new QLabel(RegisterWindow);
-        CheckPassLabel->setObjectName("CheckPassLabel");
-        CheckPassLabel->setGeometry(QRect(510, 160, 231, 20));
         BirthdayBox = new QGroupBox(RegisterWindow);
         BirthdayBox->setObjectName("BirthdayBox");
         BirthdayBox->setGeometry(QRect(90, 210, 401, 131));
@@ -181,9 +175,6 @@ public:
         YearComboBox->addItem(QString());
         YearComboBox->setObjectName("YearComboBox");
         YearComboBox->setGeometry(QRect(310, 70, 82, 28));
-        CheckAgeLabel = new QLabel(RegisterWindow);
-        CheckAgeLabel->setObjectName("CheckAgeLabel");
-        CheckAgeLabel->setGeometry(QRect(530, 310, 181, 20));
         GenderGroupBox = new QGroupBox(RegisterWindow);
         GenderGroupBox->setObjectName("GenderGroupBox");
         GenderGroupBox->setGeometry(QRect(90, 370, 191, 111));
@@ -229,6 +220,15 @@ public:
         CheckRegisterFields = new QLabel(RegisterWindow);
         CheckRegisterFields->setObjectName("CheckRegisterFields");
         CheckRegisterFields->setGeometry(QRect(240, 680, 221, 20));
+        label_usernamecheck = new QLabel(RegisterWindow);
+        label_usernamecheck->setObjectName("label_usernamecheck");
+        label_usernamecheck->setGeometry(QRect(440, 60, 58, 16));
+        label_matchingpasscheck = new QLabel(RegisterWindow);
+        label_matchingpasscheck->setObjectName("label_matchingpasscheck");
+        label_matchingpasscheck->setGeometry(QRect(510, 160, 58, 16));
+        label_agecheck = new QLabel(RegisterWindow);
+        label_agecheck->setObjectName("label_agecheck");
+        label_agecheck->setGeometry(QRect(530, 320, 58, 16));
 
         retranslateUi(RegisterWindow);
 
@@ -239,10 +239,8 @@ public:
     {
         RegisterWindow->setWindowTitle(QCoreApplication::translate("RegisterWindow", "Dialog", nullptr));
         UserLabel->setText(QCoreApplication::translate("RegisterWindow", "Username: ", nullptr));
-        UsernameCheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">Check if username exits (redfont)</span></p></body></html>", nullptr));
         PassLabel->setText(QCoreApplication::translate("RegisterWindow", "Password:", nullptr));
         RetypeLabel->setText(QCoreApplication::translate("RegisterWindow", "Re-type Password:", nullptr));
-        CheckPassLabel->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">Check if Password match (redfont)</span></p></body></html>", nullptr));
         BirthdayBox->setTitle(QCoreApplication::translate("RegisterWindow", "Date of Birth: ", nullptr));
         MonthLabel->setText(QCoreApplication::translate("RegisterWindow", "Month:", nullptr));
         DayLabel->setText(QCoreApplication::translate("RegisterWindow", "Day:", nullptr));
@@ -324,7 +322,6 @@ public:
         YearComboBox->setItemText(27, QCoreApplication::translate("RegisterWindow", "1998", nullptr));
         YearComboBox->setItemText(28, QCoreApplication::translate("RegisterWindow", "1997", nullptr));
 
-        CheckAgeLabel->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">Check age (redfont)</span></p></body></html>", nullptr));
         GenderGroupBox->setTitle(QCoreApplication::translate("RegisterWindow", "Gender:", nullptr));
         FemaleRadioButton->setText(QCoreApplication::translate("RegisterWindow", "Female", nullptr));
         MaleRadioButton->setText(QCoreApplication::translate("RegisterWindow", "Male", nullptr));
@@ -340,6 +337,9 @@ public:
         OtherCheckBox->setText(QCoreApplication::translate("RegisterWindow", "Other", nullptr));
         RegisterButton->setText(QCoreApplication::translate("RegisterWindow", "Register", nullptr));
         CheckRegisterFields->setText(QCoreApplication::translate("RegisterWindow", "Check if all fields are full", nullptr));
+        label_usernamecheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
+        label_matchingpasscheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
+        label_agecheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };
