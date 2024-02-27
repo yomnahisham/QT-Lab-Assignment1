@@ -222,13 +222,13 @@ public:
         CheckRegisterFields->setGeometry(QRect(240, 680, 221, 20));
         label_usernamecheck = new QLabel(RegisterWindow);
         label_usernamecheck->setObjectName("label_usernamecheck");
-        label_usernamecheck->setGeometry(QRect(440, 60, 101, 16));
+        label_usernamecheck->setGeometry(QRect(440, 60, 211, 16));
         label_matchingpasscheck = new QLabel(RegisterWindow);
         label_matchingpasscheck->setObjectName("label_matchingpasscheck");
-        label_matchingpasscheck->setGeometry(QRect(510, 160, 121, 16));
+        label_matchingpasscheck->setGeometry(QRect(510, 160, 261, 16));
         label_agecheck = new QLabel(RegisterWindow);
         label_agecheck->setObjectName("label_agecheck");
-        label_agecheck->setGeometry(QRect(530, 320, 131, 16));
+        label_agecheck->setGeometry(QRect(530, 320, 261, 16));
 
         retranslateUi(RegisterWindow);
 
