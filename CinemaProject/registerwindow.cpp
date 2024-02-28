@@ -37,8 +37,14 @@ void RegisterWindow::on_RegisterButton_clicked()
     QString ReTypedPassword =  ui->RetypeLineEdit->text();
     QString YearStr = ui->YearComboBox->currentText();
     int Year = YearStr.toInt();
+    int age = 2024 - Year;
 
+    bool isMale = ui->MaleRadioButton->isChecked();
+    bool isFemale = ui->FemaleRadioButton->isChecked();
+    bool isAdmin = ui->AdminRadioButton->isChecked();
+    bool isUser = ui->UserRadioButton->isChecked();
 
+    bool hasError = false;
 
     //Checking if username already exists in the usernames array
     for(int i = 0; i < 100; i++){
