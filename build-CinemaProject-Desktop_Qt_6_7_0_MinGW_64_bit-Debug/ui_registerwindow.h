@@ -49,13 +49,13 @@ public:
     QCheckBox *DramaCheckBox;
     QCheckBox *ComedyCheckBox;
     QCheckBox *RomanceCheckBox;
-    QCheckBox *HorroCheckBox;
+    QCheckBox *HorrorCheckBox;
     QCheckBox *OtherCheckBox;
     QPushButton *RegisterButton;
-    QLabel *CheckRegisterFields;
     QLabel *label_usernamecheck;
     QLabel *label_matchingpasscheck;
     QLabel *label_agecheck;
+    QLabel *CheckInputs;
 
     void setupUi(QDialog *RegisterWindow)
     {
@@ -192,7 +192,7 @@ public:
         UserRadioButton->setGeometry(QRect(20, 40, 112, 26));
         AdminRadioButton = new QRadioButton(AccTypeGroupBox);
         AdminRadioButton->setObjectName("AdminRadioButton");
-        AdminRadioButton->setGeometry(QRect(20, 70, 112, 26));
+        AdminRadioButton->setGeometry(QRect(20, 80, 112, 26));
         FavGenreGroupBox = new QGroupBox(RegisterWindow);
         FavGenreGroupBox->setObjectName("FavGenreGroupBox");
         FavGenreGroupBox->setGeometry(QRect(90, 489, 331, 161));
@@ -208,18 +208,15 @@ public:
         RomanceCheckBox = new QCheckBox(FavGenreGroupBox);
         RomanceCheckBox->setObjectName("RomanceCheckBox");
         RomanceCheckBox->setGeometry(QRect(20, 120, 93, 26));
-        HorroCheckBox = new QCheckBox(FavGenreGroupBox);
-        HorroCheckBox->setObjectName("HorroCheckBox");
-        HorroCheckBox->setGeometry(QRect(190, 80, 93, 26));
+        HorrorCheckBox = new QCheckBox(FavGenreGroupBox);
+        HorrorCheckBox->setObjectName("HorrorCheckBox");
+        HorrorCheckBox->setGeometry(QRect(190, 80, 93, 26));
         OtherCheckBox = new QCheckBox(FavGenreGroupBox);
         OtherCheckBox->setObjectName("OtherCheckBox");
         OtherCheckBox->setGeometry(QRect(190, 120, 93, 26));
         RegisterButton = new QPushButton(RegisterWindow);
         RegisterButton->setObjectName("RegisterButton");
         RegisterButton->setGeometry(QRect(90, 670, 111, 41));
-        CheckRegisterFields = new QLabel(RegisterWindow);
-        CheckRegisterFields->setObjectName("CheckRegisterFields");
-        CheckRegisterFields->setGeometry(QRect(240, 680, 221, 20));
         label_usernamecheck = new QLabel(RegisterWindow);
         label_usernamecheck->setObjectName("label_usernamecheck");
         label_usernamecheck->setGeometry(QRect(440, 60, 211, 16));
@@ -229,6 +226,9 @@ public:
         label_agecheck = new QLabel(RegisterWindow);
         label_agecheck->setObjectName("label_agecheck");
         label_agecheck->setGeometry(QRect(530, 320, 261, 16));
+        CheckInputs = new QLabel(RegisterWindow);
+        CheckInputs->setObjectName("CheckInputs");
+        CheckInputs->setGeometry(QRect(310, 680, 241, 20));
 
         retranslateUi(RegisterWindow);
 
@@ -333,13 +333,13 @@ public:
         DramaCheckBox->setText(QCoreApplication::translate("RegisterWindow", "Drama", nullptr));
         ComedyCheckBox->setText(QCoreApplication::translate("RegisterWindow", "Comedy", nullptr));
         RomanceCheckBox->setText(QCoreApplication::translate("RegisterWindow", "Romance", nullptr));
-        HorroCheckBox->setText(QCoreApplication::translate("RegisterWindow", "Horror", nullptr));
+        HorrorCheckBox->setText(QCoreApplication::translate("RegisterWindow", "Horror", nullptr));
         OtherCheckBox->setText(QCoreApplication::translate("RegisterWindow", "Other", nullptr));
         RegisterButton->setText(QCoreApplication::translate("RegisterWindow", "Register", nullptr));
-        CheckRegisterFields->setText(QCoreApplication::translate("RegisterWindow", "Check if all fields are full", nullptr));
         label_usernamecheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
         label_matchingpasscheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
         label_agecheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
+        CheckInputs->setText(QCoreApplication::translate("RegisterWindow", "Check Input Fields", nullptr));
     } // retranslateUi
 
 };

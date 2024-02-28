@@ -602,7 +602,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>70</y>
+      <y>80</y>
       <width>112</width>
       <height>26</height>
      </rect>
@@ -676,7 +676,7 @@
      <string>Romance</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="HorroCheckBox">
+   <widget class="QCheckBox" name="HorrorCheckBox">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -716,19 +716,6 @@
     <string>Register</string>
    </property>
   </widget>
-  <widget class="QLabel" name="CheckRegisterFields">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>680</y>
-     <width>221</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Check if all fields are full</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_usernamecheck">
    <property name="geometry">
     <rect>
@@ -766,6 +753,19 @@
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff2600;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="CheckInputs">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>680</y>
+     <width>241</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Check Input Fields</string>
    </property>
   </widget>
  </widget>

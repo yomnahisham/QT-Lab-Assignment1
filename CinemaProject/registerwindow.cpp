@@ -21,8 +21,8 @@ RegisterWindow::RegisterWindow(QWidget *parent)
     ui->label_matchingpasscheck->setVisible(false);
 
 
-    ui->CheckRegisterFields->setStyleSheet("QLabel {color: red};");
-    ui->CheckRegisterFields->setVisible(false);
+    ui->CheckInputs->setStyleSheet("QLabel {color: red};");
+    ui->CheckInputs->setVisible(false);
 }
 
 RegisterWindow::~RegisterWindow()
@@ -32,6 +32,7 @@ RegisterWindow::~RegisterWindow()
 
 void RegisterWindow::on_RegisterButton_clicked()
 {
+    //Saving all the user input in variables
     QString Username =  ui->UserLineEdit->text();
     QString Password = ui->PassLineEdit->text();
     QString ReTypedPassword =  ui->RetypeLineEdit->text();
@@ -41,6 +42,19 @@ void RegisterWindow::on_RegisterButton_clicked()
     QString Gender;
     QString AccType;
     QString FavGenre;
+
+    bool Male = ui->MaleRadioButton->isChecked();
+    bool Female = ui->MaleRadioButton->isChecked();
+    bool User = ui->UserRadioButton->isChecked();
+    bool Admin = ui->AdminRadioButton->isChecked();
+    bool Action = ui->ActionCheckBox->isChecked();
+    bool Romance = ui->RomanceCheckBox->isChecked();
+    bool Comedy = ui->ComedyCheckBox->isChecked();
+    bool Drama = ui->DramaCheckBox->isChecked();
+    bool Horror = ui->HorrorCheckBox->isChecked();
+    bool Other = ui->OtherCheckBox->isChecked();
+
+
 
     if(ui->MaleRadioButton->isChecked()){
         Gender = "Male";
@@ -62,13 +76,13 @@ void RegisterWindow::on_RegisterButton_clicked()
        FavGenre = "Comedy";
     }else if(ui->DramaCheckBox->isChecked()){
         FavGenre = "Drama";
-    }else if(ui->HorroCheckBox->isChecked()){
+    }else if(ui->HorrorCheckBox->isChecked()){
         FavGenre = "Horrot";
     }else if(ui->OtherCheckBox->isChecked()){
        FavGenre = "Other";
     }
 
-
+    //Checking if username already exists in the usernames array
     for(int i = 0; i < 100; i++){
         if(Username == usernames[i]){
             ui->label_usernamecheck->setText("* Username already exists");
@@ -76,12 +90,13 @@ void RegisterWindow::on_RegisterButton_clicked()
          }
     }
 
-
+    //Checking if both passwords match
     if(Password != ReTypedPassword){
         ui->label_matchingpasscheck->setText("* Passwords dont match");
         ui->label_matchingpasscheck->setVisible(true);
     }
 
+    //Checking if age is below 12
     int Year = year.toInt();
     int CurrentYear = 2024;
     int Age = CurrentYear - Year;
@@ -90,5 +105,17 @@ void RegisterWindow::on_RegisterButton_clicked()
         ui->label_agecheck->setVisible(true);
     }
 
+    bool InputError = false;
+
+    //Checking if there's an empty field
+    if(Username.isEmpty() || Password.isEmpty() || ReTypedPassword.isEmpty() || ui->DayComboBox->currentIndex() < 0 ||
+        ui->MonthComboBox->currentIndex() < 0 || ui->YearComboBox->currentIndex() < 0 || (!Male && !Female) || (!User && !Admin) ||
+        (!Action && !Horror && !Comedy && !Other && !Romance && !Drama)){
+        InputError = true;
+    }
+    if(InputError){
+        ui->CheckInputs->setText("*All fileds must be filled");
+        ui->CheckInputs->setVisible(true);
+    }
 
 }
