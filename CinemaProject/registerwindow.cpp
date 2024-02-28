@@ -11,7 +11,7 @@ RegisterWindow::RegisterWindow(QWidget *parent) : QDialog(parent), ui(new Ui::Re
     ui->label_usernamecheck->setVisible(false);
     ui->label_agecheck->setVisible(false);
     ui->label_matchingpasscheck->setVisible(false);
-    ui->CheckRegisterFields->setVisible(false);
+    ui->CheckInputs->setVisible(false);
 }
 
 RegisterWindow::~RegisterWindow()
@@ -25,7 +25,7 @@ void RegisterWindow::on_RegisterButton_clicked()
     ui->label_usernamecheck->setVisible(false);
     ui->label_agecheck->setVisible(false);
     ui->label_matchingpasscheck->setVisible(false);
-    ui->CheckRegisterFields->setVisible(false);
+    ui->CheckInputs->setVisible(false);
 
     //Saving all the user input in variables
     QString Username =  ui->UserLineEdit->text();
@@ -87,7 +87,7 @@ void RegisterWindow::on_RegisterButton_clicked()
     }
 
     //Checking if all checkboxes were left empty (to print out error)
-    if (!ui->DramaCheckBox->isChecked() && !ui->ActionCheckBox->isChecked() && !ui->RomanceCheckBox->isChecked() && !ui->ComedyCheckBox->isChecked() && !ui->HorroCheckBox->isChecked() && !ui->OtherCheckBox->isChecked()) {
+    if (!ui->DramaCheckBox->isChecked() && !ui->ActionCheckBox->isChecked() && !ui->RomanceCheckBox->isChecked() && !ui->ComedyCheckBox->isChecked() && !ui->HorrorCheckBox->isChecked() && !ui->OtherCheckBox->isChecked()) {
         hasError = true;
     }
 
@@ -103,7 +103,7 @@ void RegisterWindow::on_RegisterButton_clicked()
         this->close();
 
     } else {
-        ui->CheckRegisterFields->setText("Please make sure all fields are filled properly.");
-        ui->CheckRegisterFields->setVisible(true);
+        ui->CheckInputs->setText("Please make sure all fields are filled properly.");
+        ui->CheckInputs->setVisible(true);
     }
 }
