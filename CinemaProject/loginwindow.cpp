@@ -4,7 +4,7 @@
 #include "registerwindow.h"
 #include "users.h"
 
-
+#include <QString>
 
 LoginWindow::LoginWindow(QWidget *parent)
     : QMainWindow(parent)

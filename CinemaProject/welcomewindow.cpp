@@ -1,12 +1,12 @@
 #include "welcomewindow.h"
 #include "ui_welcomewindow.h"
-#include <QPixmap>
-#include <QFont>
 #include "loginwindow.h"
 
-WelcomeWindow::WelcomeWindow(QString username, int age, QWidget *parent)
-    : QDialog(parent)
-    , ui(new Ui::WelcomeWindow)
+#include <QString>
+#include <QPixmap>
+#include <QFont>
+
+WelcomeWindow::WelcomeWindow(QString username, int age, QWidget *parent) : QDialog(parent), ui(new Ui::WelcomeWindow)
 {
     ui->setupUi(this);
     QString ageStr = QString::number(age);

@@ -5,9 +5,7 @@
 
 #include <QString>
 
-RegisterWindow::RegisterWindow(QWidget *parent)
-    : QDialog(parent)
-    , ui(new Ui::RegisterWindow)
+RegisterWindow::RegisterWindow(QWidget *parent) : QDialog(parent), ui(new Ui::RegisterWindow)
 {
     ui->setupUi(this);
     ui->label_usernamecheck->setVisible(false);
