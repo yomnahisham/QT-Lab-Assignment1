@@ -48,13 +48,13 @@ void RegisterWindow::on_RegisterButton_clicked()
 
     //Checking if username is left empty and if not empty, checks if username already exists
     if (Username.isEmpty()) {
-        ui->label_usernamecheck->setText("Please enter a username.");
+        ui->label_usernamecheck->setText("* Please enter a username.");
         ui->label_usernamecheck->setVisible(true);
         hasError = true;
     } else {
         for (int i = 0; i < usersCount; ++i) {
             if (usernames[i] == Username) {
-                ui->label_usernamecheck->setText("Username Unavailable.");
+                ui->label_usernamecheck->setText("* Username Unavailable.");
                 ui->label_usernamecheck->setVisible(true);
                 hasError = true;
                 break;
@@ -65,10 +65,13 @@ void RegisterWindow::on_RegisterButton_clicked()
     }
 
 
-    //Checking if both passwords match
-    if(Password != ReTypedPassword){
-        ui->label_matchingpasscheck->setText("* Passwords dont match");
+    //Checking if both passwords match or if password/retypedpassword were left empty
+    if (ReTypedPassword.isEmpty() || Password.isEmpty() || ReTypedPassword != Password) {
+        ui->label_matchingpasscheck->setText("* Passwords do not match.");
         ui->label_matchingpasscheck->setVisible(true);
+        hasError = true;
+    } else {
+        ui->label_matchingpasscheck->setVisible(false);
     }
 
     //Checking if age is below 12
