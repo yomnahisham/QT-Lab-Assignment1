@@ -46,13 +46,24 @@ void RegisterWindow::on_RegisterButton_clicked()
 
     bool hasError = false;
 
-    //Checking if username already exists in the usernames array
-    for(int i = 0; i < 100; i++){
-        if(Username == usernames[i]){
-            ui->label_usernamecheck->setText("* Username already exists");
-            ui->label_usernamecheck->setVisible(true);
-         }
+    //Checking if username is left empty and if not empty, checks if username already exists
+    if (Username.isEmpty()) {
+        ui->label_usernamecheck->setText("Please enter a username.");
+        ui->label_usernamecheck->setVisible(true);
+        hasError = true;
+    } else {
+        for (int i = 0; i < usersCount; ++i) {
+            if (usernames[i] == Username) {
+                ui->label_usernamecheck->setText("Username Unavailable.");
+                ui->label_usernamecheck->setVisible(true);
+                hasError = true;
+                break;
+            } else {
+                ui->label_usernamecheck->setVisible(false);
+            }
+        }
     }
+
 
     //Checking if both passwords match
     if(Password != ReTypedPassword){
