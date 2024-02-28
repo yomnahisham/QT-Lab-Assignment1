@@ -194,7 +194,7 @@ public:
         UserRadioButton->setGeometry(QRect(20, 40, 112, 26));
         AdminRadioButton = new QRadioButton(AccTypeGroupBox);
         AdminRadioButton->setObjectName("AdminRadioButton");
-        AdminRadioButton->setGeometry(QRect(20, 80, 112, 26));
+        AdminRadioButton->setGeometry(QRect(20, 70, 112, 26));
         FavGenreGroupBox = new QGroupBox(RegisterWindow);
         FavGenreGroupBox->setObjectName("FavGenreGroupBox");
         FavGenreGroupBox->setGeometry(QRect(90, 489, 331, 161));
@@ -341,7 +341,7 @@ public:
         label_usernamecheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
         label_matchingpasscheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
         label_agecheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
-        CheckInputs->setText(QCoreApplication::translate("RegisterWindow", "Check Input Fields", nullptr));
+        CheckInputs->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">Check Input Fields</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

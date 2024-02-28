@@ -47,6 +47,7 @@ void RegisterWindow::on_RegisterButton_clicked()
 
     //Checking if username is left empty and if not empty, checks if username already exists
     if (Username.isEmpty()) {
+        ui->label_usernamecheck->setStyleSheet("QLabel { color : red; }");
         ui->label_usernamecheck->setText("* Please enter a username.");
         ui->label_usernamecheck->setVisible(true);
         hasError = true;
@@ -65,6 +66,7 @@ void RegisterWindow::on_RegisterButton_clicked()
 
     //Checking if both passwords match or if password/retypedpassword were left empty
     if (ReTypedPassword.isEmpty() || Password.isEmpty() || ReTypedPassword != Password) {
+        ui->label_matchingpasscheck->setStyleSheet("QLabel { color : red; }");
         ui->label_matchingpasscheck->setText("* Passwords do not match.");
         ui->label_matchingpasscheck->setVisible(true);
         hasError = true;
@@ -74,7 +76,8 @@ void RegisterWindow::on_RegisterButton_clicked()
 
     //Checking if age is below 12
     if (age < 12 || selectedYearStr.isEmpty() || selectedMonthStr.isEmpty() || selectedDayStr.isEmpty()) {
-        ui->label_agecheck->setText("Invaild age.");
+        ui->label_agecheck->setStyleSheet("QLabel { color : red; }");
+        ui->label_agecheck->setText("* Invaild age.");
         ui->label_agecheck->setVisible(true);
         hasError = true;
     } else {
@@ -103,7 +106,8 @@ void RegisterWindow::on_RegisterButton_clicked()
         this->close();
 
     } else {
-        ui->CheckInputs->setText("Please make sure all fields are filled properly.");
+        ui->CheckInputs->setStyleSheet("QLabel { color : red; }");
+        ui->CheckInputs->setText("* Please make sure all fields are filled properly.");
         ui->CheckInputs->setVisible(true);
     }
 }

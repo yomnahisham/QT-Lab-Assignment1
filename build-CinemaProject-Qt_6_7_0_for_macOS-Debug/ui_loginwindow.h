@@ -64,6 +64,7 @@ public:
         label_error = new QLabel(centralwidget);
         label_error->setObjectName("label_error");
         label_error->setGeometry(QRect(100, 190, 291, 16));
+        label_error->setStyleSheet(QString::fromUtf8("red"));
         LoginWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(LoginWindow);
         menubar->setObjectName("menubar");

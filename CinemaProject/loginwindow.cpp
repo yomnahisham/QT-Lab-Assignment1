@@ -38,6 +38,7 @@ void LoginWindow::on_pushButton_login_clicked()
     }
 
     if (!found) {
+        ui->label_error->setStyleSheet("QLabel { color : red; }");
         ui->label_error->setText("Wrong username or password!");
         ui->label_error->setVisible(true);
     }
