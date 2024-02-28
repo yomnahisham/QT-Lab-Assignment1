@@ -29,31 +29,14 @@ void RegisterWindow::on_RegisterButton_clicked()
     ui->label_usernamecheck->setVisible(false);
     ui->label_agecheck->setVisible(false);
     ui->label_matchingpasscheck->setVisible(false);
-
-
-    ui->CheckRegisterFields->setStyleSheet("QLabel {color: red};");
     ui->CheckRegisterFields->setVisible(false);
+
     //Saving all the user input in variables
     QString Username =  ui->UserLineEdit->text();
     QString Password = ui->PassLineEdit->text();
     QString ReTypedPassword =  ui->RetypeLineEdit->text();
-    QString Month = ui->MonthComboBox->currentText();
-    QString Day = ui->DayComboBox->currentText();
-    QString year = ui->YearComboBox->currentText();
-    QString Gender;
-    QString AccType;
-    QString FavGenre;
-
-    bool Male = ui->MaleRadioButton->isChecked();
-    bool Female = ui->MaleRadioButton->isChecked();
-    bool User = ui->UserRadioButton->isChecked();
-    bool Admin = ui->AdminRadioButton->isChecked();
-    bool Action = ui->ActionCheckBox->isChecked();
-    bool Romance = ui->RomanceCheckBox->isChecked();
-    bool Comedy = ui->ComedyCheckBox->isChecked();
-    bool Drama = ui->DramaCheckBox->isChecked();
-    bool Horror = ui->HorroCheckBox->isChecked();
-    bool Other = ui->OtherCheckBox->isChecked();
+    QString YearStr = ui->YearComboBox->currentText();
+    int Year = YearStr.toInt();
 
 
 
@@ -72,7 +55,6 @@ void RegisterWindow::on_RegisterButton_clicked()
     }
 
     //Checking if age is below 12
-    int Year = year.toInt();
     int CurrentYear = 2024;
     int Age = CurrentYear - Year;
     if(Age < 12){
@@ -82,11 +64,7 @@ void RegisterWindow::on_RegisterButton_clicked()
 
     bool InputError = false;
 
-    //Checking if there's an empty field
-    if(Username.isEmpty() || Password.isEmpty() || ReTypedPassword.isEmpty() || ui->DayComboBox->currentIndex() < 0 ||
-        ui->MonthComboBox->currentIndex() < 0 || ui->YearComboBox->currentIndex() < 0 || (!Male && !Female) || (!User && !Admin) ){
-        InputError = true;
-    }
+
     if(InputError){
         ui->CheckRegisterFields->setText("*All fileds must be filled");
         ui->CheckRegisterFields->setVisible(true);
