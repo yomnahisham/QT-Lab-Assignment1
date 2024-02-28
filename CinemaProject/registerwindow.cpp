@@ -1,11 +1,9 @@
 #include "registerwindow.h"
 #include "ui_registerwindow.h"
 #include "users.h"
-#include <QString>
 #include "welcomewindow.h"
 
-
-#include <QDate>
+#include <QString>
 
 RegisterWindow::RegisterWindow(QWidget *parent)
     : QDialog(parent)
@@ -35,8 +33,11 @@ void RegisterWindow::on_RegisterButton_clicked()
     QString Username =  ui->UserLineEdit->text();
     QString Password = ui->PassLineEdit->text();
     QString ReTypedPassword =  ui->RetypeLineEdit->text();
-    QString YearStr = ui->YearComboBox->currentText();
-    int Year = YearStr.toInt();
+    QString selectedYearStr = ui->YearComboBox->currentText();
+    QString selectedMonthStr = ui->MonthComboBox->currentText();
+    QString selectedDayStr = ui->DayComboBox->currentText();
+
+    int Year = selectedYearStr.toInt();
     int age = 2024 - Year;
 
     bool isMale = ui->MaleRadioButton->isChecked();
@@ -64,7 +65,6 @@ void RegisterWindow::on_RegisterButton_clicked()
         }
     }
 
-
     //Checking if both passwords match or if password/retypedpassword were left empty
     if (ReTypedPassword.isEmpty() || Password.isEmpty() || ReTypedPassword != Password) {
         ui->label_matchingpasscheck->setText("* Passwords do not match.");
@@ -75,28 +75,37 @@ void RegisterWindow::on_RegisterButton_clicked()
     }
 
     //Checking if age is below 12
-    int CurrentYear = 2024;
-    int Age = CurrentYear - Year;
-    if(Age < 12){
-        ui->label_agecheck->setText("* Age is below 12");
+    if (age < 12 || selectedYearStr.isEmpty() || selectedMonthStr.isEmpty() || selectedDayStr.isEmpty()) {
+        ui->label_agecheck->setText("Invaild age.");
         ui->label_agecheck->setVisible(true);
+        hasError = true;
+    } else {
+        ui->label_agecheck->setVisible(false);
     }
 
-    bool InputError = false;
+    //Checking if all raidobutton were left empty (to print out error)
+    if ((isMale == false && isFemale == false) || (isAdmin == false && isUser == false) ){
+        hasError = true;
+    }
 
+    //Checking if all checkboxes were left empty (to print out error)
+    if (!ui->DramaCheckBox->isChecked() && !ui->ActionCheckBox->isChecked() && !ui->RomanceCheckBox->isChecked() && !ui->ComedyCheckBox->isChecked() && !ui->HorroCheckBox->isChecked() && !ui->OtherCheckBox->isChecked()) {
+        hasError = true;
+    }
 
-    if(InputError){
-        ui->CheckRegisterFields->setText("*All fileds must be filled");
-        ui->CheckRegisterFields->setVisible(true);
-    }else{
+    if (!hasError) {
         usernames[usersCount] = Username;
         passwords[usersCount] = Password;
-        ages[usersCount] = Age;
-        ++usersCount;
-        this->hide();
-        WelcomeWindow *Welc = new WelcomeWindow(Username, Age);
-        Welc->show();
+        ages[usersCount] = age;
+        usersCount++;
 
+        WelcomeWindow *welcomeWindow = new WelcomeWindow(Username, age, nullptr);
+        welcomeWindow->show();
+
+        this->close();
+
+    } else {
+        ui->CheckRegisterFields->setText("Please make sure all fields are filled properly.");
+        ui->CheckRegisterFields->setVisible(true);
     }
-
 }
