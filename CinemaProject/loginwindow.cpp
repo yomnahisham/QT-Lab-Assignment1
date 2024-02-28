@@ -31,7 +31,7 @@ void LoginWindow::on_pushButton_login_clicked()
             found = true;
             int userAge = ages[i];
             hide();
-            WelcomeWindow *welcomeWindow = new WelcomeWindow(nullptr, username, userAge);
+            WelcomeWindow *welcomeWindow = new WelcomeWindow(username, userAge, nullptr);
             welcomeWindow->show();
             break;
         }

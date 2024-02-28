@@ -2,6 +2,7 @@
 #include "ui_registerwindow.h"
 #include "users.h"
 #include <QString>
+#include "welcomewindow.h"
 
 
 #include <QDate>
@@ -32,6 +33,14 @@ RegisterWindow::~RegisterWindow()
 
 void RegisterWindow::on_RegisterButton_clicked()
 {
+
+    ui->label_usernamecheck->setVisible(false);
+    ui->label_agecheck->setVisible(false);
+    ui->label_matchingpasscheck->setVisible(false);
+
+
+    ui->CheckInputs->setStyleSheet("QLabel {color: red};");
+    ui->CheckInputs->setVisible(false);
     //Saving all the user input in variables
     QString Username =  ui->UserLineEdit->text();
     QString Password = ui->PassLineEdit->text();
@@ -55,32 +64,6 @@ void RegisterWindow::on_RegisterButton_clicked()
     bool Other = ui->OtherCheckBox->isChecked();
 
 
-
-    if(ui->MaleRadioButton->isChecked()){
-        Gender = "Male";
-    }else if(ui->FemaleRadioButton->isChecked()){
-        Gender = "Female";
-    }
-
-    if(ui->UserRadioButton->isChecked()){
-        AccType = "User";
-    }else if(ui->AdminRadioButton->isChecked()){
-        AccType = "Admin";
-    }
-
-    if(ui->ActionCheckBox->isChecked()){
-        FavGenre = "Action";
-    }else if(ui->RomanceCheckBox->isChecked()){
-        FavGenre = "Romance";
-    }else if(ui->ComedyCheckBox->isChecked()){
-       FavGenre = "Comedy";
-    }else if(ui->DramaCheckBox->isChecked()){
-        FavGenre = "Drama";
-    }else if(ui->HorrorCheckBox->isChecked()){
-        FavGenre = "Horrot";
-    }else if(ui->OtherCheckBox->isChecked()){
-       FavGenre = "Other";
-    }
 
     //Checking if username already exists in the usernames array
     for(int i = 0; i < 100; i++){
@@ -109,13 +92,21 @@ void RegisterWindow::on_RegisterButton_clicked()
 
     //Checking if there's an empty field
     if(Username.isEmpty() || Password.isEmpty() || ReTypedPassword.isEmpty() || ui->DayComboBox->currentIndex() < 0 ||
-        ui->MonthComboBox->currentIndex() < 0 || ui->YearComboBox->currentIndex() < 0 || (!Male && !Female) || (!User && !Admin) ||
-        (!Action && !Horror && !Comedy && !Other && !Romance && !Drama)){
+        ui->MonthComboBox->currentIndex() < 0 || ui->YearComboBox->currentIndex() < 0 || (!Male && !Female) || (!User && !Admin) ){
         InputError = true;
     }
     if(InputError){
         ui->CheckInputs->setText("*All fileds must be filled");
         ui->CheckInputs->setVisible(true);
+    }else{
+        usernames[usersCount] = Username;
+        passwords[usersCount] = Password;
+        ages[usersCount] = Age;
+        ++usersCount;
+        this->hide();
+        WelcomeWindow *Welc = new WelcomeWindow(Username, Age);
+        Welc->show();
+
     }
 
 }

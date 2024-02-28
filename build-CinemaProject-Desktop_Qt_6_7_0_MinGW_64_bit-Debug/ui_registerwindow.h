@@ -71,6 +71,7 @@ public:
         PassLineEdit = new QLineEdit(RegisterWindow);
         PassLineEdit->setObjectName("PassLineEdit");
         PassLineEdit->setGeometry(QRect(180, 100, 221, 28));
+        PassLineEdit->setEchoMode(QLineEdit::Password);
         PassLabel = new QLabel(RegisterWindow);
         PassLabel->setObjectName("PassLabel");
         PassLabel->setGeometry(QRect(90, 100, 81, 20));
@@ -80,6 +81,7 @@ public:
         RetypeLineEdit = new QLineEdit(RegisterWindow);
         RetypeLineEdit->setObjectName("RetypeLineEdit");
         RetypeLineEdit->setGeometry(QRect(250, 150, 231, 28));
+        RetypeLineEdit->setEchoMode(QLineEdit::Password);
         BirthdayBox = new QGroupBox(RegisterWindow);
         BirthdayBox->setObjectName("BirthdayBox");
         BirthdayBox->setGeometry(QRect(90, 210, 401, 131));
