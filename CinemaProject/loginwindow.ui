@@ -32,7 +32,7 @@
      <rect>
       <x>100</x>
       <y>150</y>
-      <width>58</width>
+      <width>81</width>
       <height>16</height>
      </rect>
     </property>
@@ -43,7 +43,7 @@
    <widget class="QLineEdit" name="lineEdit_username">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>200</x>
       <y>120</y>
       <width>211</width>
       <height>21</height>
@@ -53,7 +53,7 @@
    <widget class="QLineEdit" name="lineEdit_password">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>200</x>
       <y>150</y>
       <width>211</width>
       <height>21</height>
@@ -66,10 +66,10 @@
    <widget class="QPushButton" name="pushButton_login">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>129</x>
       <y>220</y>
-      <width>100</width>
-      <height>32</height>
+      <width>101</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -79,10 +79,10 @@
    <widget class="QPushButton" name="pushButton_register">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>259</x>
       <y>220</y>
-      <width>100</width>
-      <height>32</height>
+      <width>101</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -112,7 +112,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>36</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

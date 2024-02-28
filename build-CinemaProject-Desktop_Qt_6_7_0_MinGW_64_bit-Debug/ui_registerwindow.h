@@ -194,7 +194,7 @@ public:
         UserRadioButton->setGeometry(QRect(20, 40, 112, 26));
         AdminRadioButton = new QRadioButton(AccTypeGroupBox);
         AdminRadioButton->setObjectName("AdminRadioButton");
-        AdminRadioButton->setGeometry(QRect(20, 80, 112, 26));
+        AdminRadioButton->setGeometry(QRect(20, 70, 112, 26));
         FavGenreGroupBox = new QGroupBox(RegisterWindow);
         FavGenreGroupBox->setObjectName("FavGenreGroupBox");
         FavGenreGroupBox->setGeometry(QRect(90, 489, 331, 161));
@@ -221,16 +221,16 @@ public:
         RegisterButton->setGeometry(QRect(90, 670, 111, 41));
         label_usernamecheck = new QLabel(RegisterWindow);
         label_usernamecheck->setObjectName("label_usernamecheck");
-        label_usernamecheck->setGeometry(QRect(440, 60, 211, 16));
+        label_usernamecheck->setGeometry(QRect(440, 60, 311, 16));
         label_matchingpasscheck = new QLabel(RegisterWindow);
         label_matchingpasscheck->setObjectName("label_matchingpasscheck");
-        label_matchingpasscheck->setGeometry(QRect(510, 160, 261, 16));
+        label_matchingpasscheck->setGeometry(QRect(510, 160, 371, 16));
         label_agecheck = new QLabel(RegisterWindow);
         label_agecheck->setObjectName("label_agecheck");
-        label_agecheck->setGeometry(QRect(530, 320, 261, 16));
+        label_agecheck->setGeometry(QRect(530, 320, 431, 16));
         CheckInputs = new QLabel(RegisterWindow);
         CheckInputs->setObjectName("CheckInputs");
-        CheckInputs->setGeometry(QRect(310, 680, 241, 20));
+        CheckInputs->setGeometry(QRect(280, 680, 441, 20));
 
         retranslateUi(RegisterWindow);
 
@@ -341,7 +341,7 @@ public:
         label_usernamecheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
         label_matchingpasscheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
         label_agecheck->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">TextLabel</span></p></body></html>", nullptr));
-        CheckInputs->setText(QCoreApplication::translate("RegisterWindow", "Check Input Fields", nullptr));
+        CheckInputs->setText(QCoreApplication::translate("RegisterWindow", "<html><head/><body><p><span style=\" color:#ff2600;\">Check Input Fields</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

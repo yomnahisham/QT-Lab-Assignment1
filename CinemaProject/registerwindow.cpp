@@ -12,6 +12,8 @@ RegisterWindow::RegisterWindow(QWidget *parent) : QDialog(parent), ui(new Ui::Re
     ui->label_agecheck->setVisible(false);
     ui->label_matchingpasscheck->setVisible(false);
     ui->CheckInputs->setVisible(false);
+    ui->label_matchingpasscheck->setStyleSheet("QLabel { color : red; }");
+    ui->label_usernamecheck->setStyleSheet("QLabel { color : red; }");
 }
 
 RegisterWindow::~RegisterWindow()
@@ -36,7 +38,8 @@ void RegisterWindow::on_RegisterButton_clicked()
     QString selectedDayStr = ui->DayComboBox->currentText();
 
     int Year = selectedYearStr.toInt();
-    int age = 2024 - Year;
+    int CurrentYear = 2024;
+    int age = CurrentYear - Year;
 
     bool isMale = ui->MaleRadioButton->isChecked();
     bool isFemale = ui->FemaleRadioButton->isChecked();
@@ -47,14 +50,13 @@ void RegisterWindow::on_RegisterButton_clicked()
 
     //Checking if username is left empty and if not empty, checks if username already exists
     if (Username.isEmpty()) {
-        ui->label_usernamecheck->setStyleSheet("QLabel { color : red; }");
         ui->label_usernamecheck->setText("* Please enter a username.");
         ui->label_usernamecheck->setVisible(true);
         hasError = true;
     } else {
         for (int i = 0; i < usersCount; ++i) {
             if (usernames[i] == Username) {
-                ui->label_usernamecheck->setText("* Username Unavailable.");
+                ui->label_usernamecheck->setText("* Username already exits.");
                 ui->label_usernamecheck->setVisible(true);
                 hasError = true;
                 break;
@@ -65,8 +67,13 @@ void RegisterWindow::on_RegisterButton_clicked()
     }
 
     //Checking if both passwords match or if password/retypedpassword were left empty
-    if (ReTypedPassword.isEmpty() || Password.isEmpty() || ReTypedPassword != Password) {
-        ui->label_matchingpasscheck->setStyleSheet("QLabel { color : red; }");
+    if (ReTypedPassword.isEmpty() || Password.isEmpty()){
+
+        ui->label_matchingpasscheck->setText("* Please enter a password");
+        ui->label_matchingpasscheck->setVisible(true);
+        hasError = true;
+
+    }else if(ReTypedPassword != Password) {
         ui->label_matchingpasscheck->setText("* Passwords do not match.");
         ui->label_matchingpasscheck->setVisible(true);
         hasError = true;
@@ -107,7 +114,7 @@ void RegisterWindow::on_RegisterButton_clicked()
 
     } else {
         ui->CheckInputs->setStyleSheet("QLabel { color : red; }");
-        ui->CheckInputs->setText("* Please make sure all fields are filled properly.");
+        ui->CheckInputs->setText("* All fields must be filled.");
         ui->CheckInputs->setVisible(true);
     }
 }
