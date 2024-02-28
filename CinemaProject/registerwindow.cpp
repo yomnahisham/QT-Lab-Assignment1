@@ -14,6 +14,8 @@ RegisterWindow::RegisterWindow(QWidget *parent) : QDialog(parent), ui(new Ui::Re
     ui->CheckInputs->setVisible(false);
     ui->label_matchingpasscheck->setStyleSheet("QLabel { color : red; }");
     ui->label_usernamecheck->setStyleSheet("QLabel { color : red; }");
+    ui->label_agecheck->setStyleSheet("QLabel { color : red; }");
+    ui->CheckInputs->setStyleSheet("QLabel { color : red; }");
 }
 
 RegisterWindow::~RegisterWindow()
@@ -83,7 +85,6 @@ void RegisterWindow::on_RegisterButton_clicked()
 
     //Checking if age is below 12
     if (age < 12 || selectedYearStr.isEmpty() || selectedMonthStr.isEmpty() || selectedDayStr.isEmpty()) {
-        ui->label_agecheck->setStyleSheet("QLabel { color : red; }");
         ui->label_agecheck->setText("* Invaild age.");
         ui->label_agecheck->setVisible(true);
         hasError = true;
@@ -113,7 +114,6 @@ void RegisterWindow::on_RegisterButton_clicked()
         this->close();
 
     } else {
-        ui->CheckInputs->setStyleSheet("QLabel { color : red; }");
         ui->CheckInputs->setText("* All fields must be filled.");
         ui->CheckInputs->setVisible(true);
     }
