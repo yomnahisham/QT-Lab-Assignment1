@@ -12,18 +12,10 @@ RegisterWindow::RegisterWindow(QWidget *parent)
     , ui(new Ui::RegisterWindow)
 {
     ui->setupUi(this);
-    ui->label_usernamecheck->setStyleSheet("QLabel {color: red};");
     ui->label_usernamecheck->setVisible(false);
-
-    ui->label_agecheck->setStyleSheet("QLabel {color: red};");
     ui->label_agecheck->setVisible(false);
-
-    ui->label_matchingpasscheck->setStyleSheet("QLabel {color: red};");
     ui->label_matchingpasscheck->setVisible(false);
-
-
-    ui->CheckInputs->setStyleSheet("QLabel {color: red};");
-    ui->CheckInputs->setVisible(false);
+    ui->CheckRegisterFields->setVisible(false);
 }
 
 RegisterWindow::~RegisterWindow()
@@ -39,8 +31,8 @@ void RegisterWindow::on_RegisterButton_clicked()
     ui->label_matchingpasscheck->setVisible(false);
 
 
-    ui->CheckInputs->setStyleSheet("QLabel {color: red};");
-    ui->CheckInputs->setVisible(false);
+    ui->CheckRegisterFields->setStyleSheet("QLabel {color: red};");
+    ui->CheckRegisterFields->setVisible(false);
     //Saving all the user input in variables
     QString Username =  ui->UserLineEdit->text();
     QString Password = ui->PassLineEdit->text();
@@ -60,7 +52,7 @@ void RegisterWindow::on_RegisterButton_clicked()
     bool Romance = ui->RomanceCheckBox->isChecked();
     bool Comedy = ui->ComedyCheckBox->isChecked();
     bool Drama = ui->DramaCheckBox->isChecked();
-    bool Horror = ui->HorrorCheckBox->isChecked();
+    bool Horror = ui->HorroCheckBox->isChecked();
     bool Other = ui->OtherCheckBox->isChecked();
 
 
@@ -96,8 +88,8 @@ void RegisterWindow::on_RegisterButton_clicked()
         InputError = true;
     }
     if(InputError){
-        ui->CheckInputs->setText("*All fileds must be filled");
-        ui->CheckInputs->setVisible(true);
+        ui->CheckRegisterFields->setText("*All fileds must be filled");
+        ui->CheckRegisterFields->setVisible(true);
     }else{
         usernames[usersCount] = Username;
         passwords[usersCount] = Password;
